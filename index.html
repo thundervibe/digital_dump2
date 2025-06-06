@@ -44,6 +44,93 @@
             z-index: 10;
         }
 
+        /* Rotating Blast Animation */
+        .rotating-blast {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            width: 180px;
+            height: 180px;
+            background: linear-gradient(135deg, #ff6b6b, #ffde00, #ff8e53);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            animation: rotateBlast 4s linear infinite;
+            border: 4px solid #fff;
+            box-shadow: 0 0 30px rgba(255, 215, 0, 0.8), 0 0 60px rgba(255, 107, 107, 0.6);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .rotating-blast:hover {
+            animation-duration: 1s;
+            transform: scale(1.1);
+            box-shadow: 0 0 40px rgba(255, 215, 0, 1), 0 0 80px rgba(255, 107, 107, 0.8);
+        }
+
+        .blast-content {
+            text-align: center;
+            font-family: 'Fredoka One', cursive;
+            color: #000;
+            font-weight: 400;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+            padding: 10px;
+        }
+
+        .blast-title {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            letter-spacing: 0.5px;
+        }
+
+        .blast-subtitle {
+            font-size: 0.8rem;
+            margin-bottom: 3px;
+            font-family: 'Kalam', sans-serif;
+            font-weight: 600;
+        }
+
+        .blast-price {
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+            margin-bottom: 3px;
+        }
+
+        .blast-validity {
+            font-size: 0.75rem;
+            font-family: 'Kalam', sans-serif;
+            font-weight: 600;
+            color: #000;
+        }
+
+        @keyframes rotateBlast {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Pulsing effect for extra attention */
+        .rotating-blast::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(255, 107, 107, 0.3), rgba(255, 215, 0, 0.3));
+            animation: pulse 2s ease-in-out infinite;
+            z-index: -1;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.7; }
+            50% { transform: scale(1.2); opacity: 0.3; }
+        }
+
         /* Hero Section */
         .hero-section {
             text-align: center;
@@ -54,7 +141,7 @@
 
         .hero-title {
             font-family: 'Bungee', cursive;
-            font-size: clamp(4rem, 10vw, 7rem);
+            font-size: clamp(3rem, 10vw, 7rem);
             font-weight: 400;
             background: linear-gradient(135deg, #ffde00, #ff6b6b, #ff8e53);
             -webkit-background-clip: text;
@@ -63,7 +150,7 @@
             margin-bottom: 20px;
             text-transform: uppercase;
             letter-spacing: 6px;
-            text-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
+            /* text-shadow: 0 0 30px rgba(255, 215, 0, 0.5); */
             animation: glow 2s ease-in-out infinite alternate;
         }
 
@@ -527,8 +614,31 @@
             }
         }
 
-        /* Mobile View - Stacked (Demo Above, Buy Now Below) */
+        /* Mobile Responsive for Rotating Blast */
         @media (max-width: 768px) {
+            .rotating-blast {
+                width: 140px;
+                height: 140px;
+                top: 15px;
+                right: 15px;
+            }
+
+            .blast-title {
+                font-size: 0.9rem;
+            }
+
+            .blast-subtitle {
+                font-size: 0.7rem;
+            }
+
+            .blast-price {
+                font-size: 1rem;
+            }
+
+            .blast-validity {
+                font-size: 0.65rem;
+            }
+
             .sticky-buttons-container {
                 flex-direction: column-reverse;
                 align-items: center;
@@ -584,6 +694,29 @@
         }
 
         @media (max-width: 480px) {
+            .rotating-blast {
+                width: 120px;
+                height: 120px;
+                top: 10px;
+                right: 10px;
+            }
+
+            .blast-title {
+                font-size: 0.8rem;
+            }
+
+            .blast-subtitle {
+                font-size: 0.6rem;
+            }
+
+            .blast-price {
+                font-size: 0.9rem;
+            }
+
+            .blast-validity {
+                font-size: 0.6rem;
+            }
+
             .sticky-buttons-container {
                 width: calc(100% - 30px);
                 max-width: 300px;
@@ -647,11 +780,6 @@
             100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
         }
 
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-        }
-
         .premium-bento-item img {
             opacity: 0;
             animation: fadeIn 0.8s ease forwards;
@@ -688,6 +816,16 @@
     </style>
 </head>
 <body>
+    <!-- Rotating Blast Element -->
+    <div class="rotating-blast">
+        <div class="blast-content">
+            <div class="blast-title">3000+ Videos</div>
+            <div class="blast-subtitle">(Daily Updates)</div>
+            <div class="blast-price">RS 249</div>
+            <div class="blast-validity">Lifetime Validity</div>
+        </div>
+    </div>
+
     <div class="main-container">
         <div class="overlay">
             <div class="container">
@@ -725,7 +863,6 @@
                     <div class="hardcoded-photos-grid">
                         <div class="hardcoded-photo-item">
                             <img src="https://ik.imagekit.io/ddgzqhufs/20250606_1451_Vibrant%20Banner%20Offer_simple_compose_01jx28mepbe7sbm6t44r72zd72.png" alt="Sample Photo 1">
-                            <!-- <div class="hardcoded-photo-caption">Premium Quality Content Sample</div> -->
                         </div>
                     </div>
                 </section>
@@ -782,7 +919,7 @@
 
     <!-- Sticky Buttons Container -->
     <div class="sticky-buttons-container">
-        <a href="https://www.notion.so/Dirty-Dump-Exclusive-DEMO-Images-Only-20aed0801a4f80ffaafffe39caf897bc" target="_blank" class="sticky-btn sticky-view-demo">
+        <a href="https://t.me/dirty_dump_exclusive_demo" target="_blank" class="sticky-btn sticky-view-demo">
             🎥 View Demo
         </a>
         <a href="https://superprofile.bio/vp/3000--high-quality-4k-videos" target="_blank" class="sticky-btn sticky-buy-now">
