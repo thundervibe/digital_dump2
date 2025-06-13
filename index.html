@@ -150,7 +150,6 @@
             margin-bottom: 20px;
             text-transform: uppercase;
             letter-spacing: 6px;
-            /* text-shadow: 0 0 30px rgba(255, 215, 0, 0.5); */
             animation: glow 2s ease-in-out infinite alternate;
         }
 
@@ -172,6 +171,147 @@
             border-radius: 25px;
             display: inline-block;
             border: 2px solid #ffde00;
+        }
+
+        /* Telegram Channel Section */
+        .telegram-channel-section {
+            background: linear-gradient(135deg, rgba(0, 136, 204, 0.2), rgba(0, 150, 255, 0.2));
+            border-radius: 25px;
+            padding: 50px 40px;
+            text-align: center;
+            margin-bottom: 60px;
+            border: 3px solid #fff;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .telegram-channel-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            animation: shine 3s infinite;
+        }
+
+        .telegram-channel-title {
+            font-family: 'Bungee', cursive;
+            font-size: clamp(2rem, 5vw, 3rem);
+            color: #fff;
+            margin-bottom: 25px;
+            font-weight: 400;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
+
+        .telegram-channel-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .telegram-channel-item {
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 20px;
+            padding: 25px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .telegram-channel-item:hover {
+            transform: translateY(-8px);
+            border-color: #ffde00;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .telegram-channel-image {
+            width: 100%;
+            aspect-ratio: 16/9;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .telegram-channel-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 13px;
+            transition: all 0.3s ease;
+        }
+
+        .telegram-channel-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .telegram-channel-placeholder {
+            color: rgba(255, 255, 255, 0.6);
+            font-family: 'Kalam', sans-serif;
+            font-size: 1.1rem;
+            text-align: center;
+        }
+
+        .telegram-channel-name {
+            font-family: 'Fredoka One', cursive;
+            font-size: clamp(1.3rem, 2.5vw, 1.6rem);
+            color: #fff;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+        }
+
+        .telegram-channel-description {
+            font-family: 'Kalam', sans-serif;
+            font-size: clamp(0.95rem, 2vw, 1.1rem);
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 20px;
+            line-height: 1.6;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+        }
+
+        .telegram-channel-link {
+            display: inline-block;
+            background: linear-gradient(135deg, #0088cc, #0096e6);
+            color: #fff;
+            padding: 12px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-family: 'Fredoka One', cursive;
+            font-size: clamp(1rem, 2.2vw, 1.2rem);
+            font-weight: 400;
+            transition: all 0.3s ease;
+            border: 2px solid #fff;
+            letter-spacing: 1px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .telegram-channel-link:hover {
+            background: linear-gradient(135deg, #ffde00, #ff6b6b);
+            color: #000;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
+            text-decoration: none;
+        }
+
+        .telegram-channel-link:before {
+            content: '📱 ';
+            margin-right: 5px;
         }
 
         /* Cover Banner Section */
@@ -465,8 +605,8 @@
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
         }
 
-        /* Buy Section */
-        .buy-section {
+        /* Join Section */
+        .join-section {
             background: linear-gradient(135deg, rgba(255, 215, 0, 0.9), rgba(255, 107, 107, 0.9));
             border: 3px solid #fff;
             border-radius: 25px;
@@ -480,7 +620,7 @@
             box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
         }
 
-        .buy-title {
+        .join-title {
             font-family: 'Bungee', cursive;
             font-size: clamp(2.2rem, 5vw, 3rem);
             color: #000;
@@ -491,17 +631,7 @@
             text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
         }
 
-        .price-display {
-            font-family: 'Fredoka One', cursive;
-            font-size: clamp(3rem, 7vw, 4.5rem);
-            color: #000;
-            font-weight: 400;
-            margin-bottom: 20px;
-            letter-spacing: 3px;
-            text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
-        }
-
-        .price-subtitle {
+        .join-subtitle {
             font-family: 'Kalam', sans-serif;
             font-size: clamp(1.1rem, 2.5vw, 1.4rem);
             color: #000;
@@ -510,7 +640,7 @@
             text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
         }
 
-        .buy-btn-primary {
+        .join-btn-primary {
             font-family: 'Fredoka One', cursive;
             background: linear-gradient(135deg, #000, #333);
             color: #ffde00;
@@ -529,7 +659,7 @@
             display: inline-block;
         }
 
-        .buy-btn-primary:hover {
+        .join-btn-primary:hover {
             transform: translateY(-5px) scale(1.05);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
             background: linear-gradient(135deg, #ffde00, #ff6b6b);
@@ -570,33 +700,18 @@
             text-align: center;
         }
 
-        /* Buy Now Button */
-        .sticky-buy-now {
+        /* Join Now Button */
+        .sticky-join-now {
             background: linear-gradient(135deg, #ff6b6b, #ffde00);
             color: #000;
             animation: bounce 2s infinite;
         }
 
-        .sticky-buy-now:hover {
+        .sticky-join-now:hover {
             transform: translateY(-5px) scale(1.05);
             box-shadow: 0 20px 45px rgba(0, 0, 0, 0.6);
             background: linear-gradient(135deg, #ffde00, #ff6b6b);
             animation: none;
-            color: #000;
-            text-decoration: none;
-        }
-
-        /* View Demo Button */
-        .sticky-view-demo {
-            background: linear-gradient(135deg, #fff, #e0e0e0);
-            color: #000;
-            border-color: #ffde00;
-        }
-
-        .sticky-view-demo:hover {
-            transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.6);
-            background: linear-gradient(135deg, #ffde00, #fff);
             color: #000;
             text-decoration: none;
         }
@@ -674,7 +789,7 @@
                 gap: 15px;
             }
 
-            .buy-section {
+            .join-section {
                 padding: 50px 35px;
                 margin-bottom: 100px;
             }
@@ -690,6 +805,15 @@
 
             .cover-banner-section {
                 padding: 40px 25px;
+            }
+
+            .telegram-channel-section {
+                padding: 40px 25px;
+            }
+
+            .telegram-channel-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
             }
         }
 
@@ -741,7 +865,7 @@
                 gap: 8px;
             }
 
-            .buy-section {
+            .join-section {
                 padding: 40px 25px;
                 margin-bottom: 80px;
             }
@@ -756,6 +880,15 @@
 
             .cover-banner-section {
                 padding: 35px 20px;
+            }
+
+            .telegram-channel-section {
+                padding: 35px 20px;
+            }
+
+            .telegram-channel-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
             }
         }
 
@@ -821,8 +954,8 @@
         <div class="blast-content">
             <div class="blast-title">3000+ Videos</div>
             <div class="blast-subtitle">(Daily Updates)</div>
-            <div class="blast-price">RS 49</div>
-            <div class="blast-validity">Lifetime Validity</div>
+            <div class="blast-price">FREE</div>
+            <div class="blast-validity">For Now</div>
         </div>
     </div>
 
@@ -833,6 +966,61 @@
                 <section class="hero-section">
                     <h1 class="hero-title">Digital Dump</h1>
                     <h2 class="hero-subtitle">Premium 4K Collection Bundle</h2>
+                </section>
+
+                <!-- Telegram Channel Section -->
+                <section class="telegram-channel-section">
+                    <h2 class="telegram-channel-title">🔥 Featured Telegram Channel</h2>
+                    <div class="telegram-channel-grid">
+                        <div class="telegram-channel-item">
+                            <div class="telegram-channel-image">
+                                <!-- Replace with your actual image URL -->
+                                <img src="https://ik.imagekit.io/ddgzqhufs/Dirty/photo_2025-06-13_09-31-54.jpg" alt="Telegram Channel Preview">
+                                <!-- If no image, uncomment below line and remove img tag -->
+                                <!-- <div class="telegram-channel-placeholder">16:9 Channel Image</div> -->
+                            </div>
+                            <div class="telegram-channel-name">Exclusive Premium Content</div>
+                            <div class="telegram-channel-description">
+                                Join our exclusive Telegram channel for premium content, daily updates, and special offers. Get instant access to exclusive materials and be part of our VIP community!
+                            </div>
+                            <a href="https://t.me/+DxUL-Jr8H4YxODVl" target="_blank" class="telegram-channel-link">
+                                Join Channel
+                            </a>
+                        </div>
+                        
+                        <!-- Add more channel items if needed -->
+                        <div class="telegram-channel-item">
+                            <div class="telegram-channel-image">
+                                <!-- Replace with your actual image URL -->
+                                <img src="https://ik.imagekit.io/ddgzqhufs/Untitled%20design.jpg?updatedAt=1749211271569" alt="Updates Channel Preview">
+                                <!-- If no image, uncomment below line and remove img tag -->
+                                <!-- <div class="telegram-channel-placeholder">16:9 Channel Image</div> -->
+                            </div>
+                            <div class="telegram-channel-name">Daily Updates Channel</div>
+                            <div class="telegram-channel-description">
+                                Stay updated with our daily content releases, announcements, and behind-the-scenes content. Never miss any new uploads or special announcements!
+                            </div>
+                            <a href="https://t.me/+h5_cgBUuFsk4Njc1" target="_blank" class="telegram-channel-link">
+                                Join Channel
+                            </a>
+                        </div>
+
+                        <div class="telegram-channel-item">
+                            <div class="telegram-channel-image">
+                                <!-- Replace with your actual image URL -->
+                                <img src="https://ik.imagekit.io/ddgzqhufs/photo_2025-06-13_09-40-37.jpg?updatedAt=1749788074906" alt="Updates Channel Preview">
+                                <!-- If no image, uncomment below line and remove img tag -->
+                                <!-- <div class="telegram-channel-placeholder">16:9 Channel Image</div> -->
+                            </div>
+                            <div class="telegram-channel-name">NIKS-INDIAN vidios coming soon🔥🔥</div>
+                            <div class="telegram-channel-description">
+                                comming Soon, BookMark for updates🔖
+                            </div>
+                            <a href="https://t.me/+h5_cgBUuFsk4Njc1" target="_blank" class="telegram-channel-link">
+                                Join Channel
+                            </a>
+                        </div>
+                    </div>
                 </section>
 
                 <!-- Cover Banner Section -->
@@ -846,14 +1034,14 @@
                             Life-time Access<br>Forever Yours!
                         </div>
                         <div class="banner-feature blast">
-                            Only in ₹49<br>(Limited Offer)
+                            Absolutely FREE<br>(For Now)
                         </div>
                         <div class="banner-feature">
                             Totally New Videos<br>(Never Seen)
                         </div>
                     </div>
                     <div class="banner-cta">
-                        Click the below link to buy instantly! 🔥
+                        Click the below link to join instantly! 🔥
                     </div>
                 </section>
 
@@ -881,9 +1069,8 @@
                     <p class="content-description">
                         Get instant access to our exclusive collection of 3000+ premium 4K videos. 
                         All content is carefully curated and updated daily with new additions. 
-                        Experience the ultimate entertainment with lifetime access!
+                        Experience the ultimate entertainment with lifetime access - completely free for now!
                     </p>
-
                     <div class="features-list">
                         <div class="feature-item">
                             <div class="feature-title">3000+ Videos</div>
@@ -898,19 +1085,18 @@
                             <div class="feature-text">Unique videos never seen before</div>
                         </div>
                         <div class="feature-item">
-                            <div class="feature-title">Instant Delivery</div>
-                            <div class="feature-text">Access immediately after purchase</div>
+                            <div class="feature-title">Instant Access</div>
+                            <div class="feature-text">Join immediately and start exploring</div>
                         </div>
                     </div>
                 </section>
 
-                <!-- Buy Section -->
-                <section class="buy-section">
-                    <h2 class="buy-title">Get Premium Access</h2>
-                    <div class="price-display">₹49</div>
-                    <p class="price-subtitle">Limited time offer - Regular price ₹999</p>
-                    <a href="https://superprofile.bio/vp/become-a-trading-master" target="_blank" class="buy-btn-primary">
-                        🛒 Purchase Now
+                <!-- Join Section -->
+                <section class="join-section">
+                    <h2 class="join-title">Join For Free</h2>
+                    <p class="join-subtitle">Limited time - Get premium access at no cost!</p>
+                    <a href="https://t.me/+h5_cgBUuFsk4Njc1" target="_blank" class="join-btn-primary">
+                        🚀 Join Now (Free)
                     </a>
                 </section>
             </div>
@@ -919,11 +1105,8 @@
 
     <!-- Sticky Buttons Container -->
     <div class="sticky-buttons-container">
-        <a href="https://t.me/dirty_dump_exclusive_demo" target="_blank" class="sticky-btn sticky-view-demo">
-            🎥 View Demo
-        </a>
-        <a href="https://superprofile.bio/vp/become-a-trading-master" target="_blank" class="sticky-btn sticky-buy-now">
-            🛒 Buy Now
+        <a href="https://t.me/+h5_cgBUuFsk4Njc1" target="_blank" class="sticky-btn sticky-join-now">
+            🚀 Join Now (Free)
         </a>
     </div>
 
